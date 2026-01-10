@@ -1,0 +1,52 @@
+#include<stdio.h>
+int main(){
+    int m,n;
+    printf("enter the row of first matrics :");
+        scanf("%d", &m);
+        printf("enter the column of the first matrics :");
+        scanf("%d", &n);
+        int a[m][n];
+
+        printf("\nenter the elemnts of first matrics :\n");
+        for(int i=0; i<m; i++){
+            for(int j=0; j<n; j++){
+                scanf("%d", &a[i][j]);
+            }
+        }
+        int p, q;
+        printf("enter the row of second matrics :");
+        scanf("%d", &p);
+        printf("enter the column of second matrics :");
+        scanf("%d", &q);
+        int b[p][q];
+        printf("\nenter the element of second matrics :\n");
+        for(int i=0; i<p; i++){
+            for(int j=0; j<q; j++){
+                scanf("%d", &b[i][j]);
+            }
+        }
+        if(n!=p){
+            printf("matrics is cannot be  not multiplied");
+        }
+        else{
+            int res[m][q];
+            for(int i=0; i<m; i++){
+                for (int j=0; j<q; j++){
+                    res[i][j]=0;
+                    for(int k=0; k<n; k++){
+                        res[i][j] += a[i][k]* b[k][j];
+                    }
+                }
+            }
+            printf("\n the resultant matrics :\n");
+            for (int i =0; i<m; i++){
+                for (int j=0; j<q; j++){
+                    printf("%d ", res[i][j]);
+                }
+                printf("\n");
+            }
+            
+        }
+        return 0;
+
+}
